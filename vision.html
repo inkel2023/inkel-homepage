@@ -84,15 +84,15 @@
     ========================= */
 
     .sub-nav {
-  width: 100%;
-  height: 58px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 55px;
-  background: #f4f7f9;
-  border-bottom: 1px solid #dce3e8;
-}
+      width: 100%;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 55px;
+      background: #f4f7f9;
+      border-bottom: 1px solid #dce3e8;
+    }
 
     .sub-nav a {
       position: relative;
@@ -125,7 +125,7 @@
     }
 
     /* =========================
-       비전목표 본문
+       비전목표
     ========================= */
 
     .vision-section {
@@ -134,13 +134,9 @@
       background: #ffffff;
     }
 
-    /* =========================
-       제목
-    ========================= */
-
     .section-title {
       width: min(1100px, 100%);
-      margin: 0 auto 40px;
+      margin: 0 auto 45px;
       text-align: center;
     }
 
@@ -158,10 +154,6 @@
       background: #dddddd;
     }
 
-    /* =========================
-       비전 이미지
-    ========================= */
-
     .vision-content {
       width: min(1000px, 100%);
       margin: 0 auto;
@@ -176,22 +168,16 @@
       margin: 0 auto;
     }
 
-    /* =========================
-       슬로건
-    ========================= */
-
     .vision-slogan {
       width: min(900px, 90%);
       margin: 35px auto 0;
       padding: 15px 25px;
-
       background: #4f73a8;
       color: #ffffff;
-
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.6;
       text-align: center;
-      letter-spacing: 0.3px;
     }
 
     /* =========================
@@ -232,10 +218,6 @@
         font-size: 11px;
       }
 
-      .company-header {
-        padding: 18px 15px 16px;
-      }
-
       .company-header h1 {
         font-size: 29px;
       }
@@ -245,19 +227,20 @@
         gap: 20px;
         padding: 0 15px;
         overflow-x: auto;
+        white-space: nowrap;
       }
 
       .sub-nav a {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         font-size: 12px;
       }
 
       .vision-section {
-        padding: 35px 15px 55px;
+        padding: 40px 15px 65px;
       }
 
       .section-title {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
       }
 
       .section-title h2 {
@@ -265,20 +248,20 @@
       }
 
       .vision-content {
-        width: 100%;
         overflow-x: auto;
       }
 
       .vision-image {
         width: 850px;
         max-width: none;
+        height: auto;
       }
 
       .vision-slogan {
         width: 100%;
-        margin-top: 25px;
-        padding: 13px 15px;
-        font-size: 13px;
+        margin-top: 30px;
+        padding: 14px 16px;
+        font-size: 14px;
       }
     }
 
@@ -317,6 +300,10 @@
       기업정보
     </a>
 
+    <a href="history.html">
+      회사연혁
+    </a>
+
     <a href="greeting.html">
       임직원인사말
     </a>
@@ -329,35 +316,27 @@
       조직도
     </a>
 
-
   </nav>
 
 
-  <!-- 비전목표 -->
   <main>
 
+    <!-- 비전목표 -->
     <section class="vision-section">
 
       <div class="section-title">
-
         <h2>비전목표</h2>
-
         <div class="section-title-line"></div>
-
       </div>
-
 
       <div class="vision-content">
 
-        <!-- 새로 올린 이미지 -->
         <img
           class="vision-image"
           src="vision2.png"
           alt="인켈로재 비전목표"
         >
 
-
-        <!-- 슬로건 -->
         <div class="vision-slogan">
           기술을 쌓고, 신뢰를 만들고, 미래를 연다
         </div>
