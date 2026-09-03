@@ -1,1 +1,488 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>임직원인사말 | 인켈로재</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      color: #222;
+      background: #ffffff;
+    }
+
+    /* =========================
+       상단 메인 메뉴
+    ========================= */
+
+    header {
+      width: 100%;
+      height: 90px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4%;
+    }
+
+    .logo {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+      width: 210px;
+      height: auto;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .main-nav a {
+      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: #183b56;
+    }
+
+    /* =========================
+       회사소개 타이틀
+    ========================= */
+
+    .company-header {
+      width: 100%;
+      background: #183b56;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 20px 18px;
+    }
+
+    .company-header h1 {
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       회사소개 하위 메뉴
+    ========================= */
+
+    .sub-nav {
+      width: 100%;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 55px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .sub-nav a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 58px;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      color: #183b56;
+    }
+
+    .sub-nav a.active {
+      color: #183b56;
+      font-weight: 700;
+    }
+
+    .sub-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: #183b56;
+    }
+
+    /* =========================
+       인사말 전체 영역
+    ========================= */
+
+    .greeting-section {
+      width: 100%;
+      padding: 55px 20px 100px;
+      background: #ffffff;
+    }
+
+    /* 페이지 제목 */
+
+    .section-title {
+      width: min(1100px, 100%);
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-title-line {
+      width: 520px;
+      max-width: 100%;
+      height: 1px;
+      margin: 0 auto;
+      background: #dddddd;
+    }
+
+    /* =========================
+       인사말 본문
+    ========================= */
+
+    .greeting-wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 75px;
+
+      padding: 25px 0 30px;
+    }
+
+    /* 왼쪽 */
+
+    .greeting-left {
+      position: relative;
+      padding: 12px 55px 0 0;
+      border-right: 1px solid #d8dde1;
+    }
+
+    .greeting-eng {
+      color: #e7ebee;
+      font-size: 55px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .greeting-left h3 {
+      color: #183b56;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+
+    .greeting-left h3 span {
+      display: block;
+      color: #777;
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    /* 오른쪽 */
+
+    .greeting-content {
+      padding-top: 8px;
+    }
+
+    .greeting-intro {
+      color: #183b56;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      word-break: keep-all;
+    }
+
+    .greeting-text {
+      color: #555;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 2;
+      word-break: keep-all;
+    }
+
+    .greeting-text p {
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      margin-top: 40px;
+      text-align: right;
+      color: #333;
+      font-size: 15px;
+    }
+
+    .signature strong {
+      display: inline-block;
+      margin-left: 10px;
+      color: #183b56;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       하단
+    ========================= */
+
+    footer {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #777;
+      font-size: 12px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       모바일
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        height: 70px;
+        padding: 0 20px;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .main-nav {
+        gap: 13px;
+      }
+
+      .main-nav a {
+        font-size: 11px;
+      }
+
+      .company-header h1 {
+        font-size: 29px;
+      }
+
+      .sub-nav {
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 0 15px;
+        overflow-x: auto;
+      }
+
+      .sub-nav a {
+        flex-shrink: 0;
+        font-size: 12px;
+      }
+
+      .greeting-section {
+        padding: 40px 20px 70px;
+      }
+
+      .section-title {
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .greeting-wrap {
+        display: block;
+        padding: 0;
+      }
+
+      .greeting-left {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        padding: 0 0 30px;
+        margin-bottom: 35px;
+      }
+
+      .greeting-eng {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .greeting-left h3 {
+        font-size: 21px;
+      }
+
+      .greeting-intro {
+        font-size: 19px;
+      }
+
+      .greeting-text {
+        font-size: 15px;
+        line-height: 1.9;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 상단 메인 메뉴 -->
+  <header>
+
+    <a class="logo" href="./">
+      <img src="logo-horizontal.png" alt="인켈로재 로고">
+    </a>
+
+    <nav class="main-nav">
+      <a href="company.html">회사소개</a>
+      <a href="safety-certificate.html">안전경영</a>
+      <a href="pr-certificate.html">홍보센터</a>
+      <a href="contact.html">고객지원</a>
+    </nav>
+
+  </header>
+
+
+  <!-- 회사소개 -->
+  <section class="company-header">
+    <h1>회사소개</h1>
+  </section>
+
+
+  <!-- 회사소개 하위 메뉴 -->
+  <nav class="sub-nav">
+
+    <a href="company.html">
+      기업정보
+    </a>
+
+    <a href="greeting.html" class="active">
+      임직원인사말
+    </a>
+
+    <a href="vision.html">
+      비전목표
+    </a>
+
+    <a href="organization.html">
+      조직도
+    </a>
+
+    <a href="location.html">
+      찾아오시는길
+    </a>
+
+  </nav>
+
+
+  <!-- 인사말 본문 -->
+  <main>
+
+    <section class="greeting-section">
+
+      <div class="section-title">
+        <h2>임직원인사말</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+
+      <div class="greeting-wrap">
+
+        <!-- 왼쪽 -->
+        <div class="greeting-left">
+
+          <div class="greeting-eng">
+            GREETING
+          </div>
+
+          <h3>
+            신뢰를 바탕으로<br>
+            더 나은 내일을 만들어갑니다.
+
+            <span>
+              INKEL REFRACTORY<br>
+              인켈로재
+            </span>
+          </h3>
+
+        </div>
+
+
+        <!-- 오른쪽 -->
+        <div class="greeting-content">
+
+          <div class="greeting-intro">
+            인켈로재 홈페이지를 찾아주신<br>
+            여러분께 진심으로 감사드립니다.
+          </div>
+
+          <div class="greeting-text">
+
+            <p>
+              인켈로재는 산업 현장의 안정적인 운영을 위해
+              내화물 해체 및 시공 분야에서 축적된 경험과 기술을 바탕으로
+              맡은 바 책임을 다하고 있습니다.
+            </p>
+
+            <p>
+              빠르게 변화하는 산업 환경 속에서도 현장의 요구에 유연하게 대응하고,
+              지속적인 기술 향상과 체계적인 업무 수행을 통해
+              고객이 신뢰할 수 있는 기업으로 성장해 나가겠습니다.
+            </p>
+
+            <p>
+              또한 현재에 안주하지 않고 끊임없이 배우고 개선하며,
+              오늘보다 더 나은 내일을 만들어가는 기업이 되겠습니다.
+            </p>
+
+            <p>
+              앞으로도 인켈로재의 성장과 발전을 지켜봐 주시고
+              많은 관심과 성원을 부탁드립니다.
+            </p>
+
+          </div>
+
+          <div class="signature">
+            인켈로재
+            <strong>임직원 일동</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © INKEL REFRACTORY. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
