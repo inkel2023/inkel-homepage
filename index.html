@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인켈로재</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+
+    /* 상단 메뉴 */
+    header {
+      height: 90px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #183B56;
+    }
+
+    nav {
+      display: flex;
+      gap: 45px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222222;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* 메인 이미지 */
+    .hero {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 하단 */
+    footer {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #777777;
+      background: #ffffff;
+    }
+
+    /* 모바일 */
+    @media (max-width: 768px) {
+
+      header {
+        height: 70px;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      footer {
+        height: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">INKEL REFRACTORY</div>
+
+    <nav>
+      <a href="#">회사소개</a>
+      <a href="#">안전경영</a>
+      <a href="#">홍보센터</a>
+      <a href="#">고객지원</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <img src="main.png" alt="인켈로재">
+    </div>
+  </main>
+
+  <footer>
+    © INKEL REFRACTORY. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
