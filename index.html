@@ -35,17 +35,17 @@
     }
 
     /* 왼쪽 회사 로고 */
-  .logo {
-  display: block;
-  cursor: pointer;
-  text-decoration: none;
-}
+    .logo {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-.logo img {
-  display: block;
-  width: 210px;
-  height: auto;
-}
+    .logo img {
+      display: block;
+      width: 210px;
+      height: auto;
+    }
 
     /* 오른쪽 메뉴 */
     nav {
@@ -59,6 +59,10 @@
       font-size: 16px;
       font-weight: 500;
       text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #183b56;
     }
 
     /* =========================
@@ -125,25 +129,24 @@
   </style>
 </head>
 
-
 <body>
 
   <!-- 상단 메뉴 -->
   <header>
 
-<a class="logo" href="./">
-  <img src="logo-horizontal.png" alt="인켈로재 로고">
-</a>
+    <!-- 로고 클릭하면 메인으로 -->
+    <a class="logo" href="./">
+      <img src="logo-horizontal.png" alt="인켈로재 로고">
+    </a>
 
     <nav>
       <a href="company.html">회사소개</a>
-      <a href="#">안전경영</a>
-      <a href="#">홍보센터</a>
-      <a href="#">고객지원</a>
+      <a href="safety-certificate.html">안전경영</a>
+      <a href="pr-certificate.html">홍보센터</a>
+      <a href="contact.html">고객지원</a>
     </nav>
 
   </header>
-
 
   <!-- 메인 -->
   <main>
@@ -153,7 +156,6 @@
     </div>
 
   </main>
-
 
   <!-- 하단 -->
   <footer>
