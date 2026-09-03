@@ -35,8 +35,8 @@
 
     .logo {
       display: block;
-      text-decoration: none;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .logo img {
@@ -80,7 +80,7 @@
     }
 
     /* =========================
-       안전경영 하위메뉴
+       안전경영 하위 메뉴
     ========================= */
 
     .sub-nav {
@@ -99,7 +99,6 @@
       display: flex;
       align-items: center;
       height: 58px;
-
       color: #333;
       font-size: 15px;
       font-weight: 500;
@@ -121,24 +120,23 @@
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 3px;
       background: #183b56;
     }
 
     /* =========================
-       인증서 영역
+       인증서 본문
     ========================= */
 
     .certificate-section {
       width: 100%;
-      padding: 55px 20px 100px;
+      padding: 55px 20px 90px;
       background: #ffffff;
     }
 
     .section-title {
       width: min(1100px, 100%);
-      margin: 0 auto 55px;
+      margin: 0 auto 45px;
       text-align: center;
     }
 
@@ -167,30 +165,19 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 35px;
-
       align-items: start;
     }
 
     .certificate-item {
+      width: 100%;
       text-align: center;
     }
 
     .certificate-image-wrap {
       width: 100%;
-      overflow: hidden;
+      padding: 10px;
       background: #ffffff;
-      border: 1px solid #d5dbe0;
-
-      cursor: zoom-in;
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .certificate-image-wrap:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e2e2e2;
     }
 
     .certificate-image {
@@ -202,75 +189,15 @@
     .certificate-name {
       margin-top: 18px;
       color: #183b56;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
     }
 
-    .certificate-desc {
-      margin-top: 6px;
-      color: #777;
-      font-size: 13px;
-    }
-
-    /* =========================
-       이미지 확대창
-    ========================= */
-
-    .image-modal {
-      display: none;
-
-      position: fixed;
-      z-index: 9999;
-
-      left: 0;
-      top: 0;
-
-      width: 100%;
-      height: 100%;
-
-      padding: 35px;
-
-      background: rgba(0, 0, 0, 0.82);
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    .image-modal.show {
-      display: flex;
-    }
-
-    .modal-image {
-      display: block;
-
-      max-width: 90%;
-      max-height: 92vh;
-
-      width: auto;
-      height: auto;
-
-      background: #ffffff;
-
-      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-close {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-
-      width: 45px;
-      height: 45px;
-
-      border: none;
-      background: transparent;
-
-      color: #ffffff;
-      font-size: 42px;
-      font-weight: 300;
-      line-height: 1;
-
-      cursor: pointer;
+    .certificate-description {
+      margin-top: 7px;
+      color: #666;
+      font-size: 14px;
+      font-weight: 400;
     }
 
     /* =========================
@@ -279,16 +206,12 @@
 
     footer {
       min-height: 70px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 20px;
-
       color: #777;
       font-size: 12px;
-
       background: #ffffff;
     }
 
@@ -328,11 +251,11 @@
       }
 
       .certificate-section {
-        padding: 40px 20px 70px;
+        padding: 40px 15px 65px;
       }
 
       .section-title {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
       }
 
       .section-title h2 {
@@ -342,32 +265,20 @@
       .certificate-grid {
         grid-template-columns: 1fr;
         gap: 45px;
-
         max-width: 420px;
       }
 
       .certificate-name {
-        font-size: 16px;
+        font-size: 17px;
       }
 
-      .image-modal {
-        padding: 15px;
-      }
-
-      .modal-image {
-        max-width: 96%;
-        max-height: 90vh;
-      }
-
-      .modal-close {
-        top: 10px;
-        right: 15px;
+      .certificate-description {
+        font-size: 13px;
       }
     }
 
   </style>
 </head>
-
 
 <body>
 
@@ -394,7 +305,7 @@
   </section>
 
 
-  <!-- 안전경영 하위메뉴 -->
+  <!-- 안전경영 하위 메뉴 -->
   <nav class="sub-nav">
 
     <a href="safety-certificate.html" class="active">
@@ -408,7 +319,7 @@
   </nav>
 
 
-  <!-- 인증서 본문 -->
+  <!-- 인증서 -->
   <main>
 
     <section class="certificate-section">
@@ -424,22 +335,21 @@
         <!-- ISO 14001 -->
         <div class="certificate-item">
 
-          <div
-            class="certificate-image-wrap"
-            onclick="openImage('iso14001.png')"
-          >
+          <div class="certificate-image-wrap">
+
             <img
               class="certificate-image"
               src="iso14001.png"
               alt="ISO 14001 환경경영시스템 인증서"
             >
+
           </div>
 
           <div class="certificate-name">
             ISO 14001
           </div>
 
-          <div class="certificate-desc">
+          <div class="certificate-description">
             환경경영시스템
           </div>
 
@@ -449,22 +359,21 @@
         <!-- ISO 45001 -->
         <div class="certificate-item">
 
-          <div
-            class="certificate-image-wrap"
-            onclick="openImage('iso45001.png')"
-          >
+          <div class="certificate-image-wrap">
+
             <img
               class="certificate-image"
               src="iso45001.png"
               alt="ISO 45001 안전보건경영시스템 인증서"
             >
+
           </div>
 
           <div class="certificate-name">
             ISO 45001
           </div>
 
-          <div class="certificate-desc">
+          <div class="certificate-description">
             안전보건경영시스템
           </div>
 
@@ -474,22 +383,21 @@
         <!-- ISO 9001 -->
         <div class="certificate-item">
 
-          <div
-            class="certificate-image-wrap"
-            onclick="openImage('iso9001.png')"
-          >
+          <div class="certificate-image-wrap">
+
             <img
               class="certificate-image"
               src="iso9001.png"
               alt="ISO 9001 품질경영시스템 인증서"
             >
+
           </div>
 
           <div class="certificate-name">
             ISO 9001
           </div>
 
-          <div class="certificate-desc">
+          <div class="certificate-description">
             품질경영시스템
           </div>
 
@@ -502,77 +410,10 @@
   </main>
 
 
-  <!-- 인증서 확대창 -->
-  <div
-    id="imageModal"
-    class="image-modal"
-    onclick="closeImage(event)"
-  >
-
-    <button
-      class="modal-close"
-      onclick="closeModal()"
-      aria-label="닫기"
-    >
-      ×
-    </button>
-
-    <img
-      id="modalImage"
-      class="modal-image"
-      src=""
-      alt="인증서 확대 이미지"
-    >
-
-  </div>
-
-
   <!-- 하단 -->
   <footer>
     © INKEL FURNACE. All Rights Reserved.
   </footer>
-
-
-  <script>
-
-    function openImage(imageSrc) {
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-
-      modalImage.src = imageSrc;
-      modal.classList.add("show");
-
-      document.body.style.overflow = "hidden";
-    }
-
-
-    function closeModal() {
-      const modal = document.getElementById("imageModal");
-
-      modal.classList.remove("show");
-
-      document.body.style.overflow = "";
-    }
-
-
-    function closeImage(event) {
-
-      if (event.target.id === "imageModal") {
-        closeModal();
-      }
-
-    }
-
-
-    document.addEventListener("keydown", function(event) {
-
-      if (event.key === "Escape") {
-        closeModal();
-      }
-
-    });
-
-  </script>
 
 </body>
 </html>
