@@ -27,11 +27,9 @@
       width: 100%;
       height: 90px;
       background: #ffffff;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 0 4%;
     }
 
@@ -54,7 +52,7 @@
     }
 
     .main-nav a {
-      color: #222222;
+      color: #222;
       font-size: 16px;
       font-weight: 500;
       text-decoration: none;
@@ -63,7 +61,6 @@
     .main-nav a:hover {
       color: #183b56;
     }
-
 
     /* =========================
        회사소개 제목
@@ -74,7 +71,6 @@
       background: #183b56;
       color: #ffffff;
       text-align: center;
-
       padding-top: 22px;
     }
 
@@ -84,7 +80,6 @@
       margin-bottom: 22px;
     }
 
-
     /* =========================
        회사소개 하위 메뉴
     ========================= */
@@ -92,24 +87,20 @@
     .sub-nav {
       width: 100%;
       min-height: 54px;
-
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 55px;
-
       background: #ffffff;
       border-bottom: 1px solid #e5e5e5;
     }
 
     .sub-nav a {
       position: relative;
-
       display: flex;
       align-items: center;
       height: 54px;
-
-      color: #333333;
+      color: #333;
       font-size: 15px;
       font-weight: 500;
       text-decoration: none;
@@ -119,7 +110,6 @@
       color: #183b56;
     }
 
-    /* 현재 보고 있는 기업정보 메뉴 */
     .sub-nav a.active {
       color: #183b56;
       font-weight: 700;
@@ -127,16 +117,13 @@
 
     .sub-nav a.active::after {
       content: "";
-
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-
       height: 3px;
       background: #183b56;
     }
-
 
     /* =========================
        기업정보 본문
@@ -149,7 +136,7 @@
     }
 
     .section-title {
-      width: min(900px, 100%);
+      width: min(1100px, 100%);
       margin: 0 auto 30px;
       text-align: center;
     }
@@ -166,87 +153,69 @@
       background: #dddddd;
     }
 
-
     /* =========================
-       기업정보 이미지 영역
+       기업정보 카드
     ========================= */
 
-    .company-info-box {
-      position: relative;
-
-      width: min(900px, 100%);
+    .company-info-card {
+      width: min(1100px, 100%);
       min-height: 500px;
-
       margin: 0 auto;
 
-      background-image: url("company-info-bg.png");
-      background-size: cover;
-      background-position: center;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
 
+      border: 1px solid #e3e3e3;
+      background: #ffffff;
       overflow: hidden;
     }
 
-    /* 이미지 위 밝은 레이어 */
-    .company-info-box::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background: rgba(255, 255, 255, 0.35);
+    /* 왼쪽 이미지 */
+    .company-info-image {
+      min-height: 500px;
+      background-image: url("company-info-bg.png");
+      background-size: cover;
+      background-position: left center;
     }
 
-
-    /* =========================
-       기업정보 글자
-    ========================= */
-
+    /* 오른쪽 정보 */
     .company-info-content {
-      position: relative;
-      z-index: 1;
-
-      width: 100%;
       min-height: 500px;
 
       display: flex;
       align-items: center;
-      justify-content: center;
 
-      padding: 55px 70px;
+      padding: 50px 55px;
+
+      background: rgba(255, 255, 255, 0.98);
     }
 
     .info-table {
       width: 100%;
-      max-width: 650px;
-
       border-collapse: collapse;
     }
 
     .info-table th,
     .info-table td {
-      padding: 11px 10px;
-
+      padding: 12px 0;
       vertical-align: top;
-
       font-size: 17px;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .info-table th {
-      width: 165px;
-
-      text-align: right;
-
-      padding-right: 30px;
-
+      width: 145px;
+      padding-right: 25px;
+      text-align: left;
       font-weight: 700;
+      color: #183b56;
       white-space: nowrap;
     }
 
     .info-table td {
+      color: #333;
       font-weight: 400;
     }
-
 
     /* =========================
        하단
@@ -254,19 +223,14 @@
 
     footer {
       min-height: 70px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 20px;
-
-      color: #777777;
+      color: #777;
       font-size: 12px;
-
       background: #ffffff;
     }
-
 
     /* =========================
        모바일
@@ -303,9 +267,7 @@
       .sub-nav {
         gap: 18px;
         padding: 0 15px;
-
         overflow-x: auto;
-
         justify-content: flex-start;
       }
 
@@ -322,19 +284,24 @@
         font-size: 27px;
       }
 
-      .company-info-box {
-        min-height: 460px;
+      .company-info-card {
+        grid-template-columns: 1fr;
+      }
+
+      .company-info-image {
+        min-height: 280px;
+        background-position: left center;
       }
 
       .company-info-content {
-        min-height: 460px;
-        padding: 35px 20px;
+        min-height: auto;
+        padding: 30px 25px;
       }
 
       .info-table th,
       .info-table td {
         font-size: 14px;
-        padding: 9px 5px;
+        padding: 9px 0;
       }
 
       .info-table th {
@@ -346,13 +313,7 @@
   </style>
 </head>
 
-
 <body>
-
-
-  <!-- =========================
-       상단
-  ========================== -->
 
   <header>
 
@@ -361,34 +322,17 @@
     </a>
 
     <nav class="main-nav">
-
       <a href="company.html">회사소개</a>
-
       <a href="#">안전경영</a>
-
       <a href="#">홍보센터</a>
-
       <a href="#">고객지원</a>
-
     </nav>
 
   </header>
 
-
-  <!-- =========================
-       회사소개 제목
-  ========================== -->
-
   <section class="company-header">
-
     <h1>회사소개</h1>
-
   </section>
-
-
-  <!-- =========================
-       회사소개 하위 메뉴
-  ========================== -->
 
   <nav class="sub-nav">
 
@@ -414,25 +358,18 @@
 
   </nav>
 
-
-  <!-- =========================
-       기업정보
-  ========================== -->
-
   <main>
 
     <section class="company-info-section">
 
       <div class="section-title">
-
         <h2>기업정보</h2>
-
         <div class="section-title-line"></div>
-
       </div>
 
+      <div class="company-info-card">
 
-      <div class="company-info-box">
+        <div class="company-info-image"></div>
 
         <div class="company-info-content">
 
@@ -440,75 +377,48 @@
 
             <tr>
               <th>회사명</th>
-
-              <td>
-                인켈로재
-              </td>
+              <td>인켈로재</td>
             </tr>
-
 
             <tr>
               <th>사업분야</th>
-
               <td>
                 제철화학 · 석유화학 · 발전소 · 소각로<br>
                 내화물 해체 · 시공 · SV
               </td>
             </tr>
 
-
             <tr>
               <th>주소</th>
-
               <td>
-                본사 경상북도 포항시 남구 오천읍<br>
+                경상북도 포항시 남구 오천읍<br>
                 문덕로 2-5, 205호
               </td>
             </tr>
 
-
             <tr>
               <th>전화번호</th>
-
-              <td>
-                054-727-5677
-              </td>
+              <td>054-727-5677</td>
             </tr>
-
 
             <tr>
               <th>FAX번호</th>
-
-              <td>
-                070-8270-5677
-              </td>
+              <td>070-8270-5677</td>
             </tr>
-
 
             <tr>
               <th>회사 이메일</th>
-
-              <td>
-                jg7275677@naver.com
-              </td>
+              <td>jg7275677@naver.com</td>
             </tr>
-
 
             <tr>
               <th>회사설립</th>
-
-              <td>
-                2023년도 2월
-              </td>
+              <td>2023년도 2월</td>
             </tr>
-
 
             <tr>
               <th>해당부문 종사기간</th>
-
-              <td>
-                2023년도 2월 ~ 현재
-              </td>
+              <td>2023년도 2월 ~ 현재</td>
             </tr>
 
           </table>
@@ -521,15 +431,9 @@
 
   </main>
 
-
-  <!-- =========================
-       하단
-  ========================== -->
-
   <footer>
     © INKEL REFRACTORY. All Rights Reserved.
   </footer>
-
 
 </body>
 </html>
