@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -92,7 +91,7 @@
       align-items: center;
       gap: 55px;
       background: #f4f7f9;
-border-bottom: 1px solid #dce3e8;
+      border-bottom: 1px solid #dce3e8;
     }
 
     .sub-nav a {
@@ -126,16 +125,14 @@ border-bottom: 1px solid #dce3e8;
     }
 
     /* =========================
-       인사말 전체 영역
+       인사말
     ========================= */
 
     .greeting-section {
       width: 100%;
-      padding: 55px 20px 100px;
+      padding: 55px 20px 90px;
       background: #ffffff;
     }
-
-    /* 페이지 제목 */
 
     .section-title {
       width: min(1100px, 100%);
@@ -157,95 +154,60 @@ border-bottom: 1px solid #dce3e8;
       background: #dddddd;
     }
 
-    /* =========================
-       인사말 본문
-    ========================= */
-
     .greeting-wrap {
-      width: min(1100px, 100%);
+      width: min(1150px, 100%);
       margin: 0 auto;
-
       display: grid;
-      grid-template-columns: 330px 1fr;
-      gap: 75px;
-
-      padding: 25px 0 30px;
+      grid-template-columns: 42% 58%;
+      align-items: start;
     }
 
-    /* 왼쪽 */
+    /* 왼쪽 영역 */
 
     .greeting-left {
-      position: relative;
-      padding: 12px 55px 0 0;
-      border-right: 1px solid #d8dde1;
+      padding: 15px 55px 15px 10px;
+      border-right: 1px solid #d9dfe3;
     }
 
-    .greeting-eng {
-      color: #e7ebee;
-      font-size: 55px;
+    .greeting-en {
+      color: #e6eaed;
+      font-size: 58px;
       font-weight: 700;
-      letter-spacing: 3px;
-      line-height: 1;
-      margin-bottom: 25px;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
     }
 
-    .greeting-left h3 {
+    .greeting-headline {
       color: #183b56;
-      font-size: 25px;
+      font-size: 27px;
       font-weight: 700;
       line-height: 1.55;
       word-break: keep-all;
     }
 
-    .greeting-left h3 span {
-      display: block;
-      color: #777;
-      font-size: 15px;
-      font-weight: 400;
-      margin-top: 15px;
-      line-height: 1.7;
+    /* 오른쪽 영역 */
+
+    .greeting-right {
+      padding: 10px 10px 10px 65px;
     }
 
-    /* 오른쪽 */
-
-    .greeting-content {
-      padding-top: 8px;
-    }
-
-    .greeting-intro {
-      color: #183b56;
-      font-size: 23px;
-      font-weight: 700;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      word-break: keep-all;
-    }
-
-    .greeting-text {
-      color: #555;
+    .greeting-right p {
+      color: #444;
       font-size: 16px;
-      font-weight: 400;
       line-height: 2;
+      margin-bottom: 22px;
       word-break: keep-all;
     }
 
-    .greeting-text p {
-      margin-bottom: 20px;
+    .greeting-right p:last-child {
+      margin-bottom: 0;
     }
 
-    .signature {
-      margin-top: 40px;
-      text-align: right;
-      color: #333;
-      font-size: 15px;
-    }
-
-    .signature strong {
-      display: inline-block;
-      margin-left: 10px;
-      color: #183b56;
-      font-size: 20px;
-      font-weight: 700;
+    .greeting-sign {
+      margin-top: 38px;
+      color: #222;
+      font-size: 16px;
+      font-weight: 600;
     }
 
     /* =========================
@@ -295,15 +257,16 @@ border-bottom: 1px solid #dce3e8;
         gap: 20px;
         padding: 0 15px;
         overflow-x: auto;
+        white-space: nowrap;
       }
 
       .sub-nav a {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         font-size: 12px;
       }
 
       .greeting-section {
-        padding: 40px 20px 70px;
+        padding: 40px 20px 65px;
       }
 
       .section-title {
@@ -316,32 +279,37 @@ border-bottom: 1px solid #dce3e8;
 
       .greeting-wrap {
         display: block;
-        padding: 0;
       }
 
       .greeting-left {
-        border-right: none;
-        border-bottom: 1px solid #dddddd;
         padding: 0 0 30px;
-        margin-bottom: 35px;
+        border-right: none;
+        border-bottom: 1px solid #d9dfe3;
       }
 
-      .greeting-eng {
-        font-size: 40px;
-        margin-bottom: 15px;
+      .greeting-en {
+        font-size: 42px;
+        margin-bottom: 18px;
       }
 
-      .greeting-left h3 {
-        font-size: 21px;
+      .greeting-headline {
+        font-size: 22px;
+        line-height: 1.55;
       }
 
-      .greeting-intro {
-        font-size: 19px;
+      .greeting-right {
+        padding: 30px 0 0;
       }
 
-      .greeting-text {
-        font-size: 15px;
+      .greeting-right p {
+        font-size: 14px;
         line-height: 1.9;
+        margin-bottom: 20px;
+      }
+
+      .greeting-sign {
+        margin-top: 30px;
+        font-size: 14px;
       }
     }
 
@@ -380,6 +348,10 @@ border-bottom: 1px solid #dce3e8;
       기업정보
     </a>
 
+    <a href="history.html">
+      회사연혁
+    </a>
+
     <a href="greeting.html" class="active">
       임직원인사말
     </a>
@@ -392,13 +364,12 @@ border-bottom: 1px solid #dce3e8;
       조직도
     </a>
 
-
   </nav>
 
 
-  <!-- 인사말 본문 -->
   <main>
 
+    <!-- 임직원인사말 -->
     <section class="greeting-section">
 
       <div class="section-title">
@@ -409,63 +380,45 @@ border-bottom: 1px solid #dce3e8;
 
       <div class="greeting-wrap">
 
-        <!-- 왼쪽 -->
         <div class="greeting-left">
 
-          <div class="greeting-eng">
+          <div class="greeting-en">
             GREETING
           </div>
 
-          <h3>
-            신뢰를 바탕으로<br>
-            더 나은 내일을 만들어갑니다.
-
-            <span>
-              INKEL FURNACE<br>
-              인켈로재
-            </span>
-          </h3>
+          <div class="greeting-headline">
+            축적된 기술과 경험을 바탕으로<br>
+            신뢰받는 파트너가 되겠습니다.
+          </div>
 
         </div>
 
 
-        <!-- 오른쪽 -->
-        <div class="greeting-content">
+        <div class="greeting-right">
 
-          <div class="greeting-intro">
-            인켈로재 홈페이지를 찾아주신<br>
-            여러분께 진심으로 감사드립니다.
-          </div>
+          <p>
+            인켈로재 홈페이지를 방문해 주신 여러분께 진심으로 감사드립니다.
+          </p>
 
-          <div class="greeting-text">
+          <p>
+            인켈로재는 제철화학, 석유화학, 발전소, 소각로 등
+            다양한 산업 현장에서 내화물 해체 및 시공을 수행하며
+            현장 경험과 기술력을 축적해 나가고 있습니다.
+          </p>
 
-            <p>
-              인켈로재는 산업 현장의 안정적인 운영을 위해
-              내화물 해체 및 시공 분야에서 축적된 경험과 기술을 바탕으로
-              맡은 바 책임을 다하고 있습니다.
-            </p>
+          <p>
+            급변하는 산업 환경 속에서도 지속적인 기술 향상과
+            책임 있는 업무 수행을 통해 고객의 요구에 부응하고,
+            신뢰할 수 있는 파트너로 함께 성장해 나가겠습니다.
+          </p>
 
-            <p>
-              빠르게 변화하는 산업 환경 속에서도 현장의 요구에 유연하게 대응하고,
-              지속적인 기술 향상과 체계적인 업무 수행을 통해
-              고객이 신뢰할 수 있는 기업으로 성장해 나가겠습니다.
-            </p>
+          <p>
+            앞으로도 끊임없는 노력과 도전을 통해 더 나은 가치를 만들어가는
+            인켈로재가 되겠습니다.
+          </p>
 
-            <p>
-              또한 현재에 안주하지 않고 끊임없이 배우고 개선하며,
-              오늘보다 더 나은 내일을 만들어가는 기업이 되겠습니다.
-            </p>
-
-            <p>
-              앞으로도 인켈로재의 성장과 발전을 지켜봐 주시고
-              많은 관심과 성원을 부탁드립니다.
-            </p>
-
-          </div>
-
-          <div class="signature">
-            인켈로재
-            <strong>임직원 일동</strong>
+          <div class="greeting-sign">
+            인켈로재 임직원 일동
           </div>
 
         </div>
@@ -477,6 +430,7 @@ border-bottom: 1px solid #dce3e8;
   </main>
 
 
+  <!-- 하단 -->
   <footer>
     © INKEL FURNACE. All Rights Reserved.
   </footer>
