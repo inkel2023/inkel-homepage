@@ -1,1 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>전략 | 인켈로재</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      color: #222;
+      background: #ffffff;
+    }
+
+    /* =========================
+       상단 메인 메뉴
+    ========================= */
+
+    header {
+      width: 100%;
+      height: 90px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4%;
+    }
+
+    .logo {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+      width: 210px;
+      height: auto;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .main-nav a {
+      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: #183b56;
+    }
+
+    /* =========================
+       안전경영 타이틀
+    ========================= */
+
+    .safety-header {
+      width: 100%;
+      background: #183b56;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 20px 18px;
+    }
+
+    .safety-header h1 {
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       안전경영 하위 메뉴
+    ========================= */
+
+    .sub-nav {
+      width: 100%;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 85px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .sub-nav a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 58px;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      color: #183b56;
+    }
+
+    .sub-nav a.active {
+      color: #183b56;
+      font-weight: 700;
+    }
+
+    .sub-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: #183b56;
+    }
+
+    /* =========================
+       전략 본문
+    ========================= */
+
+    .strategy-section {
+      width: 100%;
+      padding: 55px 20px 90px;
+      background: #ffffff;
+    }
+
+    .section-title {
+      width: min(1100px, 100%);
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-title-line {
+      width: 520px;
+      max-width: 100%;
+      height: 1px;
+      margin: 0 auto;
+      background: #dddddd;
+    }
+
+    /* =========================
+       전략 이미지
+    ========================= */
+
+    .strategy-content {
+      width: min(1250px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .strategy-image {
+      display: block;
+      width: 100%;
+      max-width: 1250px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* =========================
+       하단
+    ========================= */
+
+    footer {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #777;
+      font-size: 12px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       모바일
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        height: 70px;
+        padding: 0 20px;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .main-nav {
+        gap: 13px;
+      }
+
+      .main-nav a {
+        font-size: 11px;
+      }
+
+      .safety-header h1 {
+        font-size: 29px;
+      }
+
+      .sub-nav {
+        gap: 55px;
+      }
+
+      .sub-nav a {
+        font-size: 13px;
+      }
+
+      .strategy-section {
+        padding: 40px 10px 65px;
+      }
+
+      .section-title {
+        margin-bottom: 35px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      /* 가로로 긴 이미지일 경우
+         모바일에서는 확대된 상태로 좌우 스크롤 */
+      .strategy-content {
+        overflow-x: auto;
+      }
+
+      .strategy-image {
+        width: 850px;
+        max-width: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 상단 메인 메뉴 -->
+  <header>
+
+    <a class="logo" href="./">
+      <img src="logo-horizontal.png" alt="인켈로재 로고">
+    </a>
+
+    <nav class="main-nav">
+      <a href="company.html">회사소개</a>
+      <a href="safety-certificate.html">안전경영</a>
+      <a href="pr-certificate.html">홍보센터</a>
+      <a href="contact.html">고객지원</a>
+    </nav>
+
+  </header>
+
+
+  <!-- 안전경영 -->
+  <section class="safety-header">
+    <h1>안전경영</h1>
+  </section>
+
+
+  <!-- 안전경영 하위 메뉴 -->
+  <nav class="sub-nav">
+
+    <a href="safety-certificate.html">
+      인증서
+    </a>
+
+    <a href="safety-strategy.html" class="active">
+      전략
+    </a>
+
+  </nav>
+
+
+  <!-- 전략 본문 -->
+  <main>
+
+    <section class="strategy-section">
+
+      <div class="section-title">
+        <h2>전략</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="strategy-content">
+
+        <img
+          class="strategy-image"
+          src="safety-strategy.png"
+          alt="인켈로재 안전경영 전략"
+        >
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- 하단 -->
+  <footer>
+    © INKEL FURNACE. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
