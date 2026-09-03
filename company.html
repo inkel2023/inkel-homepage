@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>회사소개 | 인켈로재</title>
+  <title>기업정보 | 인켈로재</title>
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -24,7 +20,7 @@
     }
 
     /* =========================
-       상단 메인 메뉴
+       상단 메뉴
     ========================= */
 
     header {
@@ -37,6 +33,12 @@
       justify-content: space-between;
 
       padding: 0 4%;
+    }
+
+    .logo {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .logo img {
@@ -64,48 +66,80 @@
 
 
     /* =========================
-       회사소개 상단 영역
+       회사소개 제목
     ========================= */
 
     .company-header {
       width: 100%;
-      background: #0d2a43;
+      background: #183b56;
       color: #ffffff;
       text-align: center;
-      padding: 20px 20px 16px;
+
+      padding-top: 22px;
     }
 
     .company-header h1 {
       font-size: 38px;
       font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .sub-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 55px;
-      flex-wrap: wrap;
-    }
-
-    .sub-nav a {
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      opacity: 0.9;
-    }
-
-    .sub-nav a:hover {
-      opacity: 1;
-      text-decoration: underline;
-      text-underline-offset: 6px;
+      margin-bottom: 22px;
     }
 
 
     /* =========================
-       기업정보
+       회사소개 하위 메뉴
+    ========================= */
+
+    .sub-nav {
+      width: 100%;
+      min-height: 54px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 55px;
+
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .sub-nav a {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      height: 54px;
+
+      color: #333333;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      color: #183b56;
+    }
+
+    /* 현재 보고 있는 기업정보 메뉴 */
+    .sub-nav a.active {
+      color: #183b56;
+      font-weight: 700;
+    }
+
+    .sub-nav a.active::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 3px;
+      background: #183b56;
+    }
+
+
+    /* =========================
+       기업정보 본문
     ========================= */
 
     .company-info-section {
@@ -115,30 +149,32 @@
     }
 
     .section-title {
-      width: min(760px, 100%);
-      margin: 0 auto 28px;
+      width: min(900px, 100%);
+      margin: 0 auto 30px;
       text-align: center;
     }
 
     .section-title h2 {
       font-size: 32px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .section-title-line {
       width: 100%;
       height: 1px;
-      background: #d9d9d9;
+      background: #dddddd;
     }
 
 
-    /* 기업정보 이미지 박스 */
+    /* =========================
+       기업정보 이미지 영역
+    ========================= */
 
     .company-info-box {
       position: relative;
 
-      width: min(760px, 100%);
+      width: min(900px, 100%);
       min-height: 500px;
 
       margin: 0 auto;
@@ -150,14 +186,20 @@
       overflow: hidden;
     }
 
-    /* 사진 위 흰색 반투명 레이어 */
+    /* 이미지 위 밝은 레이어 */
     .company-info-box::before {
       content: "";
+
       position: absolute;
       inset: 0;
 
       background: rgba(255, 255, 255, 0.72);
     }
+
+
+    /* =========================
+       기업정보 글자
+    ========================= */
 
     .company-info-content {
       position: relative;
@@ -170,28 +212,34 @@
       align-items: center;
       justify-content: center;
 
-      padding: 50px 60px;
+      padding: 55px 70px;
     }
 
     .info-table {
       width: 100%;
-      max-width: 590px;
+      max-width: 650px;
+
       border-collapse: collapse;
     }
 
     .info-table th,
     .info-table td {
       padding: 11px 10px;
+
       vertical-align: top;
+
       font-size: 17px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .info-table th {
-      width: 155px;
+      width: 165px;
+
       text-align: right;
-      padding-right: 26px;
-      font-weight: 600;
+
+      padding-right: 30px;
+
+      font-weight: 700;
       white-space: nowrap;
     }
 
@@ -201,39 +249,21 @@
 
 
     /* =========================
-       이후 회사소개 영역용
-    ========================= */
-
-    .future-section {
-      min-height: 400px;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .future-section h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .future-section p {
-      color: #888;
-    }
-
-
-    /* =========================
        하단
     ========================= */
 
     footer {
       min-height: 70px;
-      padding: 20px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: 12px;
+      padding: 20px;
+
       color: #777777;
+      font-size: 12px;
+
       background: #ffffff;
     }
 
@@ -262,19 +292,25 @@
       }
 
       .company-header {
-        padding: 22px 15px 18px;
+        padding-top: 20px;
       }
 
       .company-header h1 {
         font-size: 29px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
 
       .sub-nav {
-        gap: 14px 22px;
+        gap: 18px;
+        padding: 0 15px;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
       }
 
       .sub-nav a {
+        flex-shrink: 0;
         font-size: 12px;
       }
 
@@ -313,134 +349,187 @@
 
 <body>
 
-  <!-- 상단 메인 메뉴 -->
+
+  <!-- =========================
+       상단
+  ========================== -->
+
   <header>
 
-    <a class="logo" href="index.html">
+    <a class="logo" href="./">
       <img src="logo-horizontal.png" alt="인켈로재 로고">
     </a>
 
     <nav class="main-nav">
+
       <a href="company.html">회사소개</a>
+
       <a href="#">안전경영</a>
+
       <a href="#">홍보센터</a>
+
       <a href="#">고객지원</a>
+
     </nav>
 
   </header>
 
 
-  <!-- 회사소개 타이틀 + 하위 메뉴 -->
+  <!-- =========================
+       회사소개 제목
+  ========================== -->
+
   <section class="company-header">
 
     <h1>회사소개</h1>
 
-    <nav class="sub-nav">
-      <a href="#company-info">기업정보</a>
-      <a href="#greeting">임직원인사말</a>
-      <a href="#vision">비전목표</a>
-      <a href="#organization">조직도</a>
-      <a href="#location">찾아오시는길</a>
-    </nav>
-
   </section>
 
 
-  <!-- 기업정보 -->
-  <section class="company-info-section" id="company-info">
+  <!-- =========================
+       회사소개 하위 메뉴
+  ========================== -->
 
-    <div class="section-title">
-      <h2>기업정보</h2>
-      <div class="section-title-line"></div>
-    </div>
+  <nav class="sub-nav">
+
+    <a href="company.html" class="active">
+      기업정보
+    </a>
+
+    <a href="greeting.html">
+      임직원인사말
+    </a>
+
+    <a href="vision.html">
+      비전목표
+    </a>
+
+    <a href="organization.html">
+      조직도
+    </a>
+
+    <a href="location.html">
+      찾아오시는길
+    </a>
+
+  </nav>
 
 
-    <div class="company-info-box">
+  <!-- =========================
+       기업정보
+  ========================== -->
 
-      <div class="company-info-content">
+  <main>
 
-        <table class="info-table">
+    <section class="company-info-section">
 
-          <tr>
-            <th>회사명</th>
-            <td>인켈로재</td>
-          </tr>
+      <div class="section-title">
 
-          <tr>
-            <th>사업분야</th>
-            <td>
-              제철화학 석유화학 발전소 소각로<br>
-              내화물해체 시공 SV
-            </td>
-          </tr>
+        <h2>기업정보</h2>
 
-          <tr>
-            <th>주소</th>
-            <td>
-              본사 경상북도 포항시 남구 오천읍<br>
-              문덕로 2-5, 205호
-            </td>
-          </tr>
-
-          <tr>
-            <th>전화번호</th>
-            <td>054-727-5677</td>
-          </tr>
-
-          <tr>
-            <th>FAX번호</th>
-            <td>070-8270-5677</td>
-          </tr>
-
-          <tr>
-            <th>회사 이메일</th>
-            <td>jg7275677@naver.com</td>
-          </tr>
-
-          <tr>
-            <th>회사설립</th>
-            <td>2023년도 2월</td>
-          </tr>
-
-          <tr>
-            <th>해당부문 종사기간</th>
-            <td>2023년도 2월 ~ 현재</td>
-          </tr>
-
-        </table>
+        <div class="section-title-line"></div>
 
       </div>
 
-    </div>
 
-  </section>
+      <div class="company-info-box">
+
+        <div class="company-info-content">
+
+          <table class="info-table">
+
+            <tr>
+              <th>회사명</th>
+
+              <td>
+                인켈로재
+              </td>
+            </tr>
 
 
-  <!-- 아래 영역은 다음 단계에서 채울 예정 -->
-  <section class="future-section" id="greeting">
-    <h2>임직원인사말</h2>
-    <p>내용 준비 중</p>
-  </section>
+            <tr>
+              <th>사업분야</th>
 
-  <section class="future-section" id="vision">
-    <h2>비전목표</h2>
-    <p>내용 준비 중</p>
-  </section>
+              <td>
+                제철화학 · 석유화학 · 발전소 · 소각로<br>
+                내화물 해체 · 시공 · SV
+              </td>
+            </tr>
 
-  <section class="future-section" id="organization">
-    <h2>조직도</h2>
-    <p>내용 준비 중</p>
-  </section>
 
-  <section class="future-section" id="location">
-    <h2>찾아오시는길</h2>
-    <p>내용 준비 중</p>
-  </section>
+            <tr>
+              <th>주소</th>
 
+              <td>
+                본사 경상북도 포항시 남구 오천읍<br>
+                문덕로 2-5, 205호
+              </td>
+            </tr>
+
+
+            <tr>
+              <th>전화번호</th>
+
+              <td>
+                054-727-5677
+              </td>
+            </tr>
+
+
+            <tr>
+              <th>FAX번호</th>
+
+              <td>
+                070-8270-5677
+              </td>
+            </tr>
+
+
+            <tr>
+              <th>회사 이메일</th>
+
+              <td>
+                jg7275677@naver.com
+              </td>
+            </tr>
+
+
+            <tr>
+              <th>회사설립</th>
+
+              <td>
+                2023년도 2월
+              </td>
+            </tr>
+
+
+            <tr>
+              <th>해당부문 종사기간</th>
+
+              <td>
+                2023년도 2월 ~ 현재
+              </td>
+            </tr>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       하단
+  ========================== -->
 
   <footer>
-    © INKEL FURNACE Co., Ltd. All Rights Reserved.
+    © INKEL REFRACTORY. All Rights Reserved.
   </footer>
+
 
 </body>
 </html>
