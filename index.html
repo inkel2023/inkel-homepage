@@ -45,16 +45,19 @@
     }
 
     /* 메인 이미지 */
-    .hero {
-      width: 100%;
-      overflow: hidden;
-    }
+.hero {
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
 
-    .hero img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
 
     /* 하단 */
     footer {
