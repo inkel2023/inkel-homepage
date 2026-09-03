@@ -80,7 +80,7 @@
     }
 
     /* =========================
-       하위 메뉴
+       회사소개 하위 메뉴
     ========================= */
 
     .sub-nav {
@@ -125,18 +125,12 @@
     }
 
     /* =========================
-       기업정보 섹션
+       공통 섹션 제목
     ========================= */
-
-    .company-info-section {
-      width: 100%;
-      padding: 55px 20px 85px;
-      background: #ffffff;
-    }
 
     .section-title {
       width: min(1100px, 100%);
-      margin: 0 auto 28px;
+      margin: 0 auto 45px;
       text-align: center;
     }
 
@@ -155,14 +149,21 @@
     }
 
     /* =========================
-       배경 이미지 + 정보
+       기업정보
     ========================= */
+
+    .company-info-section {
+      width: 100%;
+      padding: 55px 20px 80px;
+      background: #ffffff;
+    }
 
     .company-info-wrap {
       position: relative;
       width: min(1250px, 100%);
       min-height: 590px;
       margin: 0 auto;
+      overflow: hidden;
 
       background-image: url("company-info-bg2.png");
       background-size: cover;
@@ -180,32 +181,61 @@
       max-width: 590px;
     }
 
+    .company-info-content h3 {
+      color: #183b56;
+      font-size: 27px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
     .info-row {
       display: grid;
       grid-template-columns: 175px 1fr;
-      align-items: start;
-
-      padding: 15px 0;
-      border-bottom: 1px solid #e6e6e6;
+      align-items: center;
+      min-height: 62px;
+      border-bottom: 1px solid rgba(24, 59, 86, 0.16);
     }
 
-    .info-row:last-child {
-      border-bottom: none;
+    .info-row:first-of-type {
+      border-top: 2px solid #183b56;
     }
 
     .info-label {
       color: #183b56;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 700;
-      white-space: nowrap;
     }
 
     .info-value {
-      color: #222;
-      font-size: 17px;
+      color: #333;
+      font-size: 15px;
       font-weight: 400;
-      line-height: 1.65;
+      line-height: 1.6;
       word-break: keep-all;
+    }
+
+    /* =========================
+       회사연혁
+    ========================= */
+
+    .history-section {
+      width: 100%;
+      padding: 15px 20px 90px;
+      background: #ffffff;
+    }
+
+    .history-wrap {
+      width: min(1050px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .history-image {
+      display: block;
+      width: 100%;
+      max-width: 1050px;
+      height: auto;
+      margin: 0 auto;
     }
 
     /* =========================
@@ -263,7 +293,11 @@
       }
 
       .company-info-section {
-        padding: 40px 15px 60px;
+        padding: 40px 15px 55px;
+      }
+
+      .section-title {
+        margin-bottom: 35px;
       }
 
       .section-title h2 {
@@ -271,34 +305,48 @@
       }
 
       .company-info-wrap {
-        min-height: 720px;
-        background-size: auto 100%;
+        min-height: auto;
+        padding: 330px 20px 30px;
+
+        background-size: auto 330px;
         background-position: left top;
       }
 
       .company-info-content {
-        position: absolute;
-        left: 20px;
-        right: 20px;
-        top: auto;
-        bottom: 25px;
+        position: static;
         transform: none;
-
-        width: auto;
+        width: 100%;
         max-width: none;
+      }
 
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.94);
+      .company-info-content h3 {
+        font-size: 23px;
       }
 
       .info-row {
         grid-template-columns: 110px 1fr;
-        padding: 10px 0;
+        min-height: 58px;
       }
 
-      .info-label,
+      .info-label {
+        font-size: 13px;
+      }
+
       .info-value {
         font-size: 14px;
+      }
+
+      .history-section {
+        padding: 10px 10px 65px;
+      }
+
+      .history-wrap {
+        overflow-x: auto;
+      }
+
+      .history-image {
+        width: 820px;
+        max-width: none;
       }
     }
 
@@ -307,25 +355,30 @@
 
 <body>
 
+  <!-- 상단 메인 메뉴 -->
   <header>
 
     <a class="logo" href="./">
       <img src="logo-horizontal.png" alt="인켈로재 로고">
     </a>
 
-   <nav class="main-nav">
-  <a href="company.html">회사소개</a>
-  <a href="safety-certificate.html">안전경영</a>
-  <a href="pr-certificate.html">홍보센터</a>
-  <a href="contact.html">고객지원</a>
-</nav>
+    <nav class="main-nav">
+      <a href="company.html">회사소개</a>
+      <a href="safety-certificate.html">안전경영</a>
+      <a href="pr-certificate.html">홍보센터</a>
+      <a href="contact.html">고객지원</a>
+    </nav>
 
   </header>
 
+
+  <!-- 회사소개 -->
   <section class="company-header">
     <h1>회사소개</h1>
   </section>
 
+
+  <!-- 회사소개 하위 메뉴 -->
   <nav class="sub-nav">
 
     <a href="company.html" class="active">
@@ -350,8 +403,10 @@
 
   </nav>
 
+
   <main>
 
+    <!-- 기업정보 -->
     <section class="company-info-section">
 
       <div class="section-title">
@@ -359,53 +414,116 @@
         <div class="section-title-line"></div>
       </div>
 
+
       <div class="company-info-wrap">
 
         <div class="company-info-content">
 
-          <div class="info-row">
-            <div class="info-label">회사명</div>
-            <div class="info-value">인켈로재</div>
-          </div>
+          <h3>INKEL FURNACE</h3>
+
 
           <div class="info-row">
-            <div class="info-label">사업분야</div>
+
+            <div class="info-label">
+              회사명
+            </div>
+
+            <div class="info-value">
+              인켈로재
+            </div>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <div class="info-label">
+              사업분야
+            </div>
+
             <div class="info-value">
               제철화학 · 석유화학 · 발전소 · 소각로<br>
               내화물 해체 · 시공 · SV
             </div>
+
           </div>
 
+
           <div class="info-row">
-            <div class="info-label">주소</div>
+
+            <div class="info-label">
+              주소
+            </div>
+
             <div class="info-value">
               경상북도 포항시 남구 오천읍 문덕로 2-5, 205호
             </div>
+
           </div>
 
-          <div class="info-row">
-            <div class="info-label">전화번호</div>
-            <div class="info-value">054-727-5677</div>
-          </div>
 
           <div class="info-row">
-            <div class="info-label">FAX번호</div>
-            <div class="info-value">070-8270-5677</div>
+
+            <div class="info-label">
+              전화번호
+            </div>
+
+            <div class="info-value">
+              054-727-5677
+            </div>
+
           </div>
 
-          <div class="info-row">
-            <div class="info-label">회사 이메일</div>
-            <div class="info-value">jg7275677@naver.com</div>
-          </div>
 
           <div class="info-row">
-            <div class="info-label">회사설립</div>
-            <div class="info-value">2023년도 2월</div>
+
+            <div class="info-label">
+              FAX
+            </div>
+
+            <div class="info-value">
+              070-8270-5677
+            </div>
+
           </div>
 
+
           <div class="info-row">
-            <div class="info-label">해당부문 종사기간</div>
-            <div class="info-value">2023년도 2월 ~ 현재</div>
+
+            <div class="info-label">
+              이메일
+            </div>
+
+            <div class="info-value">
+              jg7275677@naver.com
+            </div>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <div class="info-label">
+              회사설립
+            </div>
+
+            <div class="info-value">
+              2023년도 2월
+            </div>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <div class="info-label">
+              해당부문 종사기간
+            </div>
+
+            <div class="info-value">
+              2023년도 2월 ~ 현재
+            </div>
+
           </div>
 
         </div>
@@ -414,8 +532,31 @@
 
     </section>
 
+
+    <!-- 회사연혁 -->
+    <section class="history-section">
+
+      <div class="section-title">
+        <h2>회사연혁</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="history-wrap">
+
+        <img
+          class="history-image"
+          src="history.png"
+          alt="인켈로재 회사연혁"
+        >
+
+      </div>
+
+    </section>
+
   </main>
 
+
+  <!-- 하단 -->
   <footer>
     © INKEL FURNACE. All Rights Reserved.
   </footer>
