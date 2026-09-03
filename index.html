@@ -14,7 +14,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, "Noto Sans KR", sans-serif;
       background: #ffffff;
     }
 
@@ -34,7 +34,6 @@
       padding: 0 4%;
     }
 
-    /* 왼쪽 회사 로고 */
     .logo {
       display: block;
       cursor: pointer;
@@ -47,7 +46,6 @@
       height: auto;
     }
 
-    /* 오른쪽 메뉴 */
     nav {
       display: flex;
       align-items: center;
@@ -70,6 +68,7 @@
     ========================= */
 
     .hero {
+      position: relative;
       width: 100%;
       overflow: hidden;
       background: #102a70;
@@ -79,6 +78,26 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    /* 추가 문구 */
+    .hero-subtext {
+      position: absolute;
+
+      /* 위치 조절 */
+      left: 50%;
+      top: 64%;
+      transform: translateX(-50%);
+
+      width: 90%;
+      text-align: center;
+
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: 1px;
+
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
     }
 
     /* =========================
@@ -121,6 +140,16 @@
         font-size: 12px;
       }
 
+      .hero-subtext {
+        top: 66%;
+        width: 92%;
+        padding: 0 10px;
+
+        font-size: 11px;
+        line-height: 1.6;
+        letter-spacing: 0.3px;
+      }
+
       footer {
         height: 55px;
       }
@@ -134,7 +163,6 @@
   <!-- 상단 메뉴 -->
   <header>
 
-    <!-- 로고 클릭하면 메인으로 -->
     <a class="logo" href="./">
       <img src="logo-horizontal.png" alt="인켈로재 로고">
     </a>
@@ -148,14 +176,22 @@
 
   </header>
 
+
   <!-- 메인 -->
   <main>
 
     <div class="hero">
+
       <img src="main.png" alt="인켈로재">
+
+      <div class="hero-subtext">
+        제철화학 · 석유화학 · 발전소 · 소각로 · 내화물 해체 · 시공 · SV
+      </div>
+
     </div>
 
   </main>
+
 
   <!-- 하단 -->
   <footer>
