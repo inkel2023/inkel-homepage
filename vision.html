@@ -80,7 +80,7 @@
     }
 
     /* =========================
-       회사소개 하위메뉴
+       회사소개 하위 메뉴
     ========================= */
 
     .sub-nav {
@@ -125,18 +125,22 @@
     }
 
     /* =========================
-       비전목표
+       비전목표 본문
     ========================= */
 
     .vision-section {
       width: 100%;
-      padding: 55px 20px 90px;
+      padding: 45px 20px 80px;
       background: #ffffff;
     }
 
+    /* =========================
+       제목
+    ========================= */
+
     .section-title {
       width: min(1100px, 100%);
-      margin: 0 auto 45px;
+      margin: 0 auto 40px;
       text-align: center;
     }
 
@@ -159,14 +163,35 @@
     ========================= */
 
     .vision-content {
-      width: min(1400px, 100%);
+      width: min(1000px, 100%);
       margin: 0 auto;
+      text-align: center;
     }
 
     .vision-image {
-      width: 100%;
       display: block;
+      width: 100%;
+      max-width: 1000px;
       height: auto;
+      margin: 0 auto;
+    }
+
+    /* =========================
+       슬로건
+    ========================= */
+
+    .vision-slogan {
+      width: min(900px, 90%);
+      margin: 35px auto 0;
+      padding: 15px 25px;
+
+      background: #4f73a8;
+      color: #ffffff;
+
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 0.3px;
     }
 
     /* =========================
@@ -207,6 +232,10 @@
         font-size: 11px;
       }
 
+      .company-header {
+        padding: 18px 15px 16px;
+      }
+
       .company-header h1 {
         font-size: 29px;
       }
@@ -224,32 +253,33 @@
       }
 
       .vision-section {
-        padding: 40px 10px 65px;
+        padding: 35px 15px 55px;
       }
 
       .section-title {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
       }
 
       .section-title h2 {
         font-size: 28px;
       }
 
-      /*
-        비전 이미지는 가로로 긴 이미지라
-        모바일에서는 화면보다 크게 보여주고
-        좌우 스크롤 가능하게 처리
-      */
-
       .vision-content {
+        width: 100%;
         overflow-x: auto;
       }
 
       .vision-image {
-        width: 900px;
+        width: 850px;
         max-width: none;
       }
 
+      .vision-slogan {
+        width: 100%;
+        margin-top: 25px;
+        padding: 13px 15px;
+        font-size: 13px;
+      }
     }
 
   </style>
@@ -280,7 +310,7 @@
   </section>
 
 
-  <!-- 회사소개 하위메뉴 -->
+  <!-- 회사소개 하위 메뉴 -->
   <nav class="sub-nav">
 
     <a href="company.html">
@@ -306,22 +336,35 @@
   </nav>
 
 
-  <!-- 비전목표 본문 -->
+  <!-- 비전목표 -->
   <main>
 
     <section class="vision-section">
 
       <div class="section-title">
+
         <h2>비전목표</h2>
+
         <div class="section-title-line"></div>
+
       </div>
 
+
       <div class="vision-content">
+
+        <!-- 새로 올린 이미지 -->
         <img
           class="vision-image"
-          src="vision.png"
+          src="vision2.png"
           alt="인켈로재 비전목표"
         >
+
+
+        <!-- 슬로건 -->
+        <div class="vision-slogan">
+          기술을 쌓고, 신뢰를 만들고, 미래를 연다
+        </div>
+
       </div>
 
     </section>
