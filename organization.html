@@ -90,8 +90,8 @@
       justify-content: center;
       align-items: center;
       gap: 55px;
-background: #f4f7f9;
-border-bottom: 1px solid #dce3e8;
+      background: #f4f7f9;
+      border-bottom: 1px solid #dce3e8;
     }
 
     .sub-nav a {
@@ -125,7 +125,7 @@ border-bottom: 1px solid #dce3e8;
     }
 
     /* =========================
-       조직도 영역
+       조직도
     ========================= */
 
     .organization-section {
@@ -154,11 +154,7 @@ border-bottom: 1px solid #dce3e8;
       background: #dddddd;
     }
 
-    /* =========================
-       조직도 이미지
-    ========================= */
-
-    .organization-content {
+    .organization-wrap {
       width: min(1200px, 100%);
       margin: 0 auto;
       text-align: center;
@@ -219,15 +215,16 @@ border-bottom: 1px solid #dce3e8;
         gap: 20px;
         padding: 0 15px;
         overflow-x: auto;
+        white-space: nowrap;
       }
 
       .sub-nav a {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         font-size: 12px;
       }
 
       .organization-section {
-        padding: 40px 10px 65px;
+        padding: 40px 15px 65px;
       }
 
       .section-title {
@@ -238,13 +235,15 @@ border-bottom: 1px solid #dce3e8;
         font-size: 28px;
       }
 
-      .organization-content {
+      .organization-wrap {
+        width: 100%;
         overflow-x: auto;
       }
 
       .organization-image {
         width: 800px;
         max-width: none;
+        height: auto;
       }
     }
 
@@ -283,6 +282,10 @@ border-bottom: 1px solid #dce3e8;
       기업정보
     </a>
 
+    <a href="history.html">
+      회사연혁
+    </a>
+
     <a href="greeting.html">
       임직원인사말
     </a>
@@ -295,13 +298,12 @@ border-bottom: 1px solid #dce3e8;
       조직도
     </a>
 
-
   </nav>
 
 
-  <!-- 조직도 본문 -->
   <main>
 
+    <!-- 조직도 -->
     <section class="organization-section">
 
       <div class="section-title">
@@ -309,12 +311,14 @@ border-bottom: 1px solid #dce3e8;
         <div class="section-title-line"></div>
       </div>
 
-      <div class="organization-content">
+      <div class="organization-wrap">
+
         <img
           class="organization-image"
           src="organization.png"
           alt="인켈로재 조직도"
         >
+
       </div>
 
     </section>
